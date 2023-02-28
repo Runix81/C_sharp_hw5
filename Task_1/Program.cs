@@ -1,4 +1,12 @@
-﻿int[] Array(string msg)
+﻿// Задайте массив заполненный случайными положительными трёхзначными числами.
+//  Напишите программу, которая покажет количество чётных чисел в массиве.
+
+// [345, 897, 568, 234] -> 2
+
+
+
+
+int[] Array(string msg)
 {
     Console.Write($"{msg} -> ");
     int size = Convert.ToInt32(Console.ReadLine());
@@ -10,17 +18,20 @@
     }
     return array;
 }
-void PrintArray()
-{
-    int[] array = Array("Введите размер массива");
 
+void EvenQuantity(int[] array)
+{
+    int counter = 0;
     for (int i = 0; i < array.Length; i++)
     {
         System.Console.Write($"{array[i]} ");
+        if (array[i] % 2 == 0)
+        {
+            counter++;
+        }
     }
+    System.Console.WriteLine("");
+    System.Console.WriteLine($"В текущем массиве {counter} четных чисел.");
+
 }
-int EvenQuantity(int[] array)
-{
-    
-}
-PrintArray();
+EvenQuantity(Array("Введите размер массива"));
